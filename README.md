@@ -54,7 +54,7 @@ Run `npm run test` to check your work. At this point, you should have 2 tests pa
 
 We need to add a couple of methods in order to build our blockchain. Start by creating a function in the `BlockChain` class, beneath its constructor class, called `addBlock`. Pay attention to naming here, the test will fail if the function is misspelled.
 
-This `addBlock` function should accept one parameter. This parameter will be named `block`.
+This `addBlock` function should accept one parameter. This parameter will be named `blockData`.
 
 Add this code inside the `addBlock` method. Make sure to keep it at the top of the method.
 
@@ -72,7 +72,7 @@ Run `npm run test` to check your work. You should now have 3 tests passing:
 
 ### Step Three
 
-Since our `addBlock` function is accepting the parameter `block`, it should DO something with block inside the method. But first, let's take a look at what else we might need to ensure that a transaction is valid before adding a block.
+Since our `addBlock` function is accepting the parameter `blockData`, it should DO something with the block data inside the method. But first, let's take a look at what else we might need to ensure that a transaction is valid before adding a block.
 
 Before we add a new block to our blockchain, we need to ensure that it has a valid transaction.
 - First, look at what `checkValidTransaction` is checking for in `ValidityChecker.js`. What 3 things is `checkValidTransaction` checking for?
@@ -84,7 +84,7 @@ Let's put it all together.
 <br>
 Write a conditional inside of `addBlock` that checks to see if an _instance_ of `checkValidTransaction` (inherited from ValidityChecker) is valid. If the transaction is valid we need to create a `new` instance of the `Block` class and `add` it to our chain before returning the new instance.  The `Block` class accepts some sort of data, an index and a previousHash. You'll have to figure out what data should be sent inside the parameters of the `new Block` class instance. A couple things to note:
 - `checkValidTransaction` requires one parameter. How is this parameter related to the `Block` class?
-- `addBlock` accepts `block` as a parameter. How does `block` relate to `checkValidTransaction`?
+- `addBlock` accepts `blockData` as a parameter. How does `blockData` relate to `checkValidTransaction`?
 
 If the transaction is invalid we need to return an error.
 We can do that by utilizing javascipts error class.
