@@ -81,7 +81,7 @@ Before we add a new block to our blockchain, we need to ensure that it has a val
 
 
 Let's put it all together.
-<br>https://manifesto.softwarecraftsmanship.org/
+<br>
 Write a conditional inside of `addBlock` that checks to see if an _instance_ of `checkValidTransaction` (inherited from ValidityChecker) is valid. If the transaction is valid we need to create a `new` instance of the `Block` class and `add` it to our chain before returning the new instance.  The `Block` class accepts some sort of data, an index and a previousHash. You'll have to figure out what data should be sent inside the parameters of the `new Block` class instance. A couple things to note:
 - `checkValidTransaction` requires one parameter. How is this parameter related to the `Block` class?
 - `addBlock` accepts `blockData` as a parameter. How does `blockData` relate to `checkValidTransaction`?
@@ -270,7 +270,7 @@ You may want to look into:
 <br>
 You've also been provided with a package called faker that allows us to generate some awesome fake data quickly! It's imported at the top of the `solution.js file`. Happy Coding!
 
-**[More On Faker](https://github.com/Marak/Faker.js#readme)**
+**[More On Faker](https://www.npmjs.com/package/@faker-js/faker)**
 
 Try making 10, 50, 100 or maybe 1000 transactions!
 
