@@ -81,7 +81,7 @@ Before we add a new block to our blockchain, we need to ensure that it has a val
 
 
 Let's put it all together.
-<br>
+<br>https://manifesto.softwarecraftsmanship.org/
 Write a conditional inside of `addBlock` that checks to see if an _instance_ of `checkValidTransaction` (inherited from ValidityChecker) is valid. If the transaction is valid we need to create a `new` instance of the `Block` class and `add` it to our chain before returning the new instance.  The `Block` class accepts some sort of data, an index and a previousHash. You'll have to figure out what data should be sent inside the parameters of the `new Block` class instance. A couple things to note:
 - `checkValidTransaction` requires one parameter. How is this parameter related to the `Block` class?
 - `addBlock` accepts `blockData` as a parameter. How does `blockData` relate to `checkValidTransaction`?
